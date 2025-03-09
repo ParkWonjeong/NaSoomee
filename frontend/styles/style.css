@@ -216,3 +216,22 @@ nav ul li a:hover {
     color: white;
     cursor: pointer;
 }
+
+/* 반응형 디자인: 모바일 화면에서 프로필과 캐러셀을 세로로 배치 */
+@media screen and (max-width: 768px) {
+    .main-layout {
+        flex-direction: column; /* 세로 정렬 */
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .profile-section {
+        width: 100%; /* 프로필 너비를 전체로 확장 */
+        margin-bottom: 20px; /* 캐러셀과 간격 추가 */
+    }
+
+    .carousel-section {
+        width: 100%; /* 캐러셀도 전체 너비로 확장 */
+    }
+}
