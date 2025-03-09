@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수미의 그림가게</title>
+    <title>NASOOMEE</title>
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="scripts/main.js"></script>
 </head>
 <body>
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <h1 class="store-title">수미의 그림가게</h1>
+        <h1 class="artist-title">NA SOOMEE</h1>
     </header>
+
     <nav id="side-menu">
         <div class="close-menu" onclick="toggleMenu()">✖</div>
         <ul>
+            <li><a href="gallery.html">전체 작품</a></li>
             <li><a href="drawing.html">Drawing</a></li>
             <li><a href="pencil.html">Pencil Drawing</a></li>
             <li><a href="pastel.html">Oil Pastel</a></li>
@@ -22,45 +24,31 @@
             <li><a href="oil.html">Oil Painting</a></li>
             <li><a href="pottery.html">Pottery</a></li>
             <li><a href="portrait.html">Portrait</a></li>
-            <li><a href="admin.html">관리자 페이지</a></li>
         </ul>
     </nav>
-    <section class="carousel">
-        <img src="images/painting_store.png" class="carousel-image active">
-        <img src="images/front_door.png" class="carousel-image">
-        <img src="images/uk_dolls.png" class="carousel-image">
-    </section>
-    <section class="info">
-        <h2>그림 가게 정보</h2>
-        <p>주소: 경기 남양주시 수동면 비룡로 742 1층</p>
-        <p>전화번호: 010-4370-3697</p>
-        <p>Email: nasoomee3697@naver.com</p>
-        <!-- 카카오 지도 API 추가 -->
-        <!-- 카카오 지도 API 추가 -->
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44d27071d1d94e05cd15a450db4d89a5&autoload=false"></script>
 
-        <!-- 지도 표시 영역 -->
-        <div id="map" style="width:100%; height:300px;"></div>
+    <!-- 메인 레이아웃: 왼쪽(소개) + 오른쪽(캐러셀) -->
+    <section class="main-layout">
+        <!-- 왼쪽: 작가 프로필 -->
+        <div class="profile-section">
+            <img src="images/profile_pic.jpg" alt="작가 프로필 사진" class="profile-photo">
+            <h2>나수미</h2>
+            <p>NA SOOMEE</p>
+            <p>소개 내용</p>
+            <p>📍 South Korea</p>
+            <p>📩 <a href="mailto:nasoomee3697@naver.com">nasoomee3697@naver.com</a></p>
+            <p>📷 <a href="https://www.instagram.com/nasoomee3697" target="_blank">@nasoomee3697</a></p>
+        </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                kakao.maps.load(function () {
-                    var container = document.getElementById('map'); // 지도 표시 영역
-                    var options = {
-                        center: new kakao.maps.LatLng(37.723886, 127.282082), // 위도, 경도
-                        level: 3 // 확대 레벨
-                    };
-
-                    var map = new kakao.maps.Map(container, options); // 지도 생성
-
-                    var marker = new kakao.maps.Marker({ 
-                        position: new kakao.maps.LatLng(37.723886, 127.282082) // 마커 위치
-                    });
-                    marker.setMap(map);
-                });
-            });
-        </script>
-
+        <!-- 오른쪽: 작품 캐러셀 -->
+        <div class="carousel-section">
+            <div class="carousel">
+                <img src="images/art1.png" class="carousel-image active">
+                <img src="images/art2.png" class="carousel-image">
+                <img src="images/art3.png" class="carousel-image">
+                <img src="images/art4.png" class="carousel-image">
+            </div>
+        </div>
     </section>
 </body>
 </html>

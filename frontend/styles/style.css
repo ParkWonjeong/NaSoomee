@@ -2,34 +2,37 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #FFFF99;
-    color: #39ff14; /* 형광 초록 글씨 색상 */
+    color: #39ff14;
     text-align: center;
 }
 
+/* 헤더 스타일 */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #ff1493; /* 형광 핑크 헤더 */
+    background-color: #ff1493;
     padding: 30px 20px;
     font-size: 24px;
     font-weight: bold;
 }
 
-.store-title {
+.artist-title {
     margin: 10px 0 0;
     font-size: 28px;
 }
 
+/* 메뉴 버튼 */
 .menu-toggle {
     position: absolute;
     left: 20px;
     font-size: 30px;
     cursor: pointer;
-    color: #39ff14; /* 형광 초록 색상 적용 */
+    color: #39ff14;
 }
 
+/* 사이드바 */
 nav {
     position: fixed;
     top: 0;
@@ -39,7 +42,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.9);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 9999;
+    z-index: 1000;
 }
 
 nav.visible {
@@ -52,7 +55,7 @@ nav.visible {
     right: 15px;
     font-size: 24px;
     cursor: pointer;
-    color: #39ff14; /* 형광 초록 색상 적용 */
+    color: #39ff14;
 }
 
 nav ul {
@@ -66,7 +69,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ff1493; /* 형광 초록 색상 적용 */
+    color: #ff1493;
     text-decoration: none;
     font-size: 18px;
     display: block;
@@ -78,45 +81,138 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.info {
-    color: #39ff14; /* 형광 초록 (기본 설정) */
-    font-size: 18px;
-    padding: 20px;
+/* 메인 레이아웃 */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    padding: 40px;
 }
 
-.info h2 {
-    color: #ff1493; /* 형광 핑크 (제목 색상) */
+/* 왼쪽: 프로필 섹션 */
+.profile-section {
+    width: 35%;
+    text-align: center;
+    background-color: transparent; /* 배경 투명하게 설정 */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: none; /* 그림자 효과 제거 */
+}
+
+.profile-photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-section h2 {
     font-size: 24px;
-}
-
-.info p {
     color: #ff1493;
-    font-size: 16px;
 }
 
+.profile-section p {
+    font-size: 16px;
+    margin: 5px 0;
+}
 
-/* 캐러셀 스타일 */
+.profile-section a {
+    color: #ff1493;
+    text-decoration: none;
+}
+
+/* 오른쪽: 캐러셀 섹션 */
+.carousel-section {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
 .carousel {
     position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    height: 600px;
     overflow: hidden;
-    z-index: 1;
+    border-radius: 10px;
 }
 
 .carousel img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    border-radius: 10px;
     z-index: 1;
 }
 
 .carousel img.active {
     opacity: 1;
     position: relative;
+}
+
+
+/* 갤러리 스타일 (정사각형 레이아웃) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 30px;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px; /* 정사각형 크기 유지 */
+    object-fit: cover; /* 이미지 비율 유지하면서 정사각형 채우기 */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* 마우스 오버 시 확대 효과 */
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 팝업 창 스타일 */
+.image-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    border-radius: 10px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }

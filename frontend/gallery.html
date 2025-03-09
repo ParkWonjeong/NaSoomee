@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <h1 class="artist-title">Gallery</h1>
+    </header>
+
+    <nav id="side-menu">
+        <div class="close-menu" onclick="toggleMenu()">✖</div>
+        <ul>
+            <li><a href="index.html">홈으로</a></li>
+            <li><a href="drawing.html">Drawing</a></li>
+            <li><a href="pencil.html">Pencil Drawing</a></li>
+            <li><a href="pastel.html">Oil Pastel</a></li>
+            <li><a href="watercolor.html">Watercolor</a></li>
+            <li><a href="oil.html">Oil Painting</a></li>
+            <li><a href="pottery.html">Pottery</a></li>
+            <li><a href="portrait.html">Portrait</a></li>
+        </ul>
+    </nav>
+
+    <section class="gallery-grid">
+        <img src="images/art1.png" alt="작품 1" onclick="openPopup('images/art1.png')">
+        <img src="images/art2.png" alt="작품 2" onclick="openPopup('images/art2.png')">
+        <img src="images/art3.png" alt="작품 3" onclick="openPopup('images/art3.png')">
+        <img src="images/art4.png" alt="작품 4" onclick="openPopup('images/art4.png')">
+        <img src="images/art5.png" alt="작품 5" onclick="openPopup('images/art5.png')">
+        <img src="images/art6.png" alt="작품 6" onclick="openPopup('images/art6.png')">
+    </section>
+
+    <!-- 팝업 화면 -->
+    <div id="imagePopup" class="image-popup" onclick="closePopup()">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">✖</span>
+            <img id="popupImage" src="" alt="확대된 작품">
+        </div>
+    </div>
+
+    <script defer src="scripts/main.js"></script>
+</body>
+</html>
