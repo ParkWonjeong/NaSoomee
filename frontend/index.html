@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수미의 그림가게</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <h1 class="store-title">수미의 그림가게</h1>
+    </header>
+    <nav id="side-menu">
+        <div class="close-menu" onclick="toggleMenu()">✖</div>
+        <ul>
+            <li><a href="drawing.html">Drawing</a></li>
+            <li><a href="pencil.html">Pencil Drawing</a></li>
+            <li><a href="pastel.html">Oil Pastel</a></li>
+            <li><a href="watercolor.html">Watercolor</a></li>
+            <li><a href="oil.html">Oil Painting</a></li>
+            <li><a href="pottery.html">Pottery</a></li>
+            <li><a href="portrait.html">Portrait</a></li>
+            <li><a href="admin.html">관리자 페이지</a></li>
+        </ul>
+    </nav>
+    <section class="carousel">
+        <img src="images/painting_store.png" class="carousel-image active">
+        <img src="images/front_door.png" class="carousel-image">
+        <img src="images/uk_dolls.png" class="carousel-image">
+    </section>
+    <section class="info">
+        <h2>가게 정보</h2>
+        <p>주소: 서울특별시 예술로 123</p>
+        <p>전화번호: 010-1234-5678</p>
+        <p>Email: contact@nasoomee.com</p>
+        <div id="map" style="width:100%;height:300px;background:gray;">(지도 API 추가 가능)</div>
+    </section>
+</body>
+</html>
