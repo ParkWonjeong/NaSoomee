@@ -38,6 +38,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.9);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 nav.visible {
@@ -93,6 +94,7 @@ nav ul li a:hover {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     border-radius: 10px;
+    z-index: 1;
 }
 
 .carousel img.active {
