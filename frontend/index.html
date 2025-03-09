@@ -31,11 +31,36 @@
         <img src="images/uk_dolls.png" class="carousel-image">
     </section>
     <section class="info">
-        <h2>가게 정보</h2>
-        <p>주소: 서울특별시 예술로 123</p>
-        <p>전화번호: 010-1234-5678</p>
-        <p>Email: contact@nasoomee.com</p>
-        <div id="map" style="width:100%;height:300px;background:gray;">(지도 API 추가 가능)</div>
+        <h2>그림 가게 정보</h2>
+        <p>주소: 경기 남양주시 수동면 비룡로 742 1층</p>
+        <p>전화번호: 010-4370-3697</p>
+        <p>Email: nasoomee3697@naver.com</p>
+        <!-- 카카오 지도 API 추가 -->
+        <!-- 카카오 지도 API 추가 -->
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44d27071d1d94e05cd15a450db4d89a5&autoload=false"></script>
+
+        <!-- 지도 표시 영역 -->
+        <div id="map" style="width:100%; height:300px;"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                kakao.maps.load(function () {
+                    var container = document.getElementById('map'); // 지도 표시 영역
+                    var options = {
+                        center: new kakao.maps.LatLng(37.723886, 127.282082), // 위도, 경도
+                        level: 3 // 확대 레벨
+                    };
+
+                    var map = new kakao.maps.Map(container, options); // 지도 생성
+
+                    var marker = new kakao.maps.Marker({ 
+                        position: new kakao.maps.LatLng(37.723886, 127.282082) // 마커 위치
+                    });
+                    marker.setMap(map);
+                });
+            });
+        </script>
+
     </section>
 </body>
 </html>
